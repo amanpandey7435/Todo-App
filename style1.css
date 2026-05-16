@@ -125,8 +125,17 @@ body {
 
 /* MOBILE VIEW */
 @media (max-width: 480px) {
+
+  /* keep container centered content */
+  .container {
+    align-items: center;
+    text-align: center;
+  }
+
   .input-container {
     flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 
   .input-container input,
@@ -134,8 +143,14 @@ body {
     width: 100%;
   }
 
-  /* KEEP TASK + DELETE SIDE BY SIDE */
+  /* TASK CARD stays full width but centered */
+  #todo-list {
+    align-items: center;
+  }
+
   .addlist {
+    width: 100%;
+    max-width: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -144,6 +159,7 @@ body {
   .task-text {
     flex: 1;
     min-width: 0;
+    text-align: left; /* keeps text readable */
   }
 
   .delete-btn {
