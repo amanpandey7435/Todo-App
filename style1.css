@@ -1,106 +1,121 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
 body {
   min-height: 100vh;
-  margin: auto;
-  padding: 5rem 1rem;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #74ebd5, #9face6);
+  padding: 2rem 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
 }
-.content{
-  
-  text-align: center;
-  margin: auto;
-}
-.container{
-  background-color: white;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  width:30em;
-  border-radius: 10px;
-  /* height:200px; */
 
-}
-.inp {
-  margin: 1rem 0;
+/* MAIN CONTAINER */
+.container {
   width: 100%;
+  max-width: 520px;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+
+  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); */
 }
 
-.add {
- width: 40%;
+/* TITLE */
+.content {
+  text-align: center;
+  margin-bottom: 1rem;
 }
-.input-container{
+
+/* INPUT + BUTTON CENTER ALIGN */
+.input-container {
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
+
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
+/* ❌ INPUT NOT STYLED (as requested) */
+
+/* ADD BUTTON (simple green) */
+.add {
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+
+  /* background: green; */
+  color: white;
+}
+
+/* TODO LIST */
 #todo-list {
   list-style: none;
-  padding: 5px;
-  margin: 0;
-  width:85%;
-  align-items: center;
-} 
-.addlist{
   display: flex;
-  justify-content: space-around;
-  margin-bottom:5px ;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* TASK ITEM */
+.addlist {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 8px;
+
+  flex-wrap: wrap;
 }
+
+/* TASK TEXT */
+.task-text {
+  flex: 1;
+  min-width: 150px;
+  word-break: break-word;
+}
+
+/* DELETE BUTTON (ONLY GREEN, NO STYLING) */
 .delete-btn {
-  height: 30px;
-  padding: 0 10px;
-  font-size: 13px;
-  border-radius: 6px;
+  background-color: var(--bs-danger);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
-.task-text{
-  width:40%;
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+  }
 }
 
 @media (max-width: 480px) {
-  body {
-    padding: 2rem 0.5rem;
-  }
-
-  .container {
-    width: 95%;
-    border-radius: 8px;
-  }
-
   .input-container {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .inp {
-    width: 100%;
   }
 
   .add {
     width: 100%;
   }
 
-  #todo-list {
-    width: 100%;
-  }
-
   .addlist {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
   }
 
   .delete-btn {
-    align-self: flex-end;
-    height: 28px;
-    font-size: 12px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
+    width: 100%;
   }
 }
