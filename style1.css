@@ -20,11 +20,13 @@ body {
 .container {
   width: 100%;
   max-width: 520px;
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 
-  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); */
+  display: flex;
+  flex-direction: column;
 }
 
 /* TITLE */
@@ -33,27 +35,35 @@ body {
   margin-bottom: 1rem;
 }
 
-/* INPUT + BUTTON CENTER ALIGN */
+/* INPUT + BUTTON */
 .input-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-
   margin-bottom: 1rem;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
-/* ❌ INPUT NOT STYLED (as requested) */
+.input-container input {
+  flex: 1;
+  min-width: 0;
+}
 
-/* ADD BUTTON (simple green) */
+/* ADD BUTTON */
 .add {
   padding: 10px 14px;
   border: none;
   cursor: pointer;
-
-  /* background: green; */
   color: white;
+  border-radius: 8px;
+  /* background: #28a745; */
+  transition: 0.2s ease;
+}
+
+.add:hover {
+  transform: translateY(-3px);
+  /* background: #218838; */
 }
 
 /* TODO LIST */
@@ -62,6 +72,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 /* TASK ITEM */
@@ -71,27 +82,38 @@ body {
   align-items: center;
   gap: 10px;
 
-  padding: 10px;
-  background: #f7f7f7;
-  border-radius: 8px;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  transition: 0.2s ease;
+}
 
-  flex-wrap: wrap;
+.addlist:hover {
+  transform: scale(1.01);
+  background: #f1f5f9;
 }
 
 /* TASK TEXT */
 .task-text {
   flex: 1;
-  min-width: 150px;
+  min-width: 0;
   word-break: break-word;
 }
 
-/* DELETE BUTTON (ONLY GREEN, NO STYLING) */
+/* DELETE BUTTON */
 .delete-btn {
-  background-color: var(--bs-danger);
-  color: white;
+  background: transparent;
   border: none;
-  padding: 5px 10px;
   cursor: pointer;
+  font-size: 18px;
+  color: #dc3545;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  /* color: #b02a37; */
 }
 
 /* RESPONSIVE */
@@ -101,21 +123,31 @@ body {
   }
 }
 
+/* MOBILE VIEW */
 @media (max-width: 480px) {
   .input-container {
     flex-direction: column;
   }
 
+  .input-container input,
   .add {
     width: 100%;
   }
 
+  /* KEEP TASK + DELETE SIDE BY SIDE */
   .addlist {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .task-text {
+    flex: 1;
+    min-width: 0;
   }
 
   .delete-btn {
-    width: 100%;
+    width: auto;
+    padding: 6px 10px;
   }
 }
