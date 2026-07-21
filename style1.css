@@ -126,44 +126,21 @@ body {
 /* MOBILE VIEW */
 @media (max-width: 480px) {
 
-  /* keep container centered content */
   .container {
+    max-width: 95%;
     align-items: center;
-    text-align: center;
   }
 
   .input-container {
     flex-direction: column;
-    width: 100%;
-    align-items: center;
+    max-width: 300px;
   }
 
-  .input-container input,
-  .add {
-    width: 100%;
-  }
-
-  /* TASK CARD stays full width but centered */
-  #todo-list {
-    align-items: center;
-  }
-
-  .addlist {
-    width: 100%;
+  .input-container input {
     max-width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
   }
 
-  .task-text {
-    flex: 1;
-    min-width: 0;
-    text-align: left; /* keeps text readable */
-  }
-
-  .delete-btn {
-    width: auto;
-    padding: 6px 10px;
+  #todo-list {
+    max-width: 300px;
   }
 }
